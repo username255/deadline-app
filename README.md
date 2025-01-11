@@ -37,3 +37,19 @@ From features:
 - small adapter was added within the `HomeComponent` - unfolding secondsLeft from within the response object and passing to component as plain value
 
 (alternative route could have been with Resource API - which is experimental at the moment, plus signals and effects, though not sure if cutting edge Angular is of much interest to you at the moment, happy to discuss though)
+
+## Task (2)
+
+Added within `task-2.js` file
+
+Usage is either `node task-2.js` and edit the `console.log` calls at the end of file
+or
+paste in console and still edit the very bottom of the file
+
+Approach:
+
+- basic sanity checks
+- filtering for valid cameras (within range) and adding those to a new list (if memory critical could have been a pointer)
+- doing line-sweep the distance dimension, where each camera contributes two events (start/end) sorted by distance
+- each event updates a segment tree tracking coverage in the light range, using coordinate compression, whenever the active set of cameras remains fixed over a distance interval, verifying full light coverage
+- if all intervals are covered, return true; otherwise false.
