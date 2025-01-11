@@ -34,5 +34,6 @@ From features:
 - updates every second via `rxjs` `interval`
 - transforms milliseconds to seconds via `secondsLeft` (pure) pipe
 - implemented `mock-interceptor` to return `mock response` from an HTTP call to server
+- small adapter was added within the `HomeComponent` - unfolding secondsLeft from within the response object and passing to component as plain value
 
 (alternative route could have been with Resource API - which is experimental at the moment, plus signals and effects, though not sure if cutting edge Angular is of much interest to you at the moment, happy to discuss though)
