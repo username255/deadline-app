@@ -1,0 +1,25 @@
+.clock-effect {
+    background: var(--dark);
+    color: var(--light);
+    padding: 8px 24px;
+    border-radius: 4px;
+    box-shadow:
+      0 1px 3px 0 rgba(60, 64, 67, 0.3),
+      0 4px 8px 3px rgba(60, 64, 67, 0.15);
+    transition: width 0.4s;
+    transition-timing-function: ease-out;
+
+    &:hover {
+      cursor: progress;
+    }
+
+    &.is-deadline {
+        box-shadow:
+          0 1px 3px 0 rgba(132, 55, 55, 0.651),
+          0 4px 8px 3px rgba(100, 69, 73, 0.441);
+
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+}

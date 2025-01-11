@@ -12,48 +12,27 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## Task (1)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Requested component called `DeadlineComponent` (`deadline.component.ts`)
+Takes `secondsUntilDeadline` param as input, which corresponds to `Number of seconds` until the deadline.
 
-```bash
-ng generate component component-name
+```html
+<app-deadline [secondsUntilDeadline]="300"></app-deadline>
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+OR
 
-```bash
-ng generate --help
+```html
+<app-deadline [secondsUntilDeadline]="seconds$ | async"></app-deadline>
 ```
 
-## Building
+From features:
 
-To build the project run:
+- neat interface (facade) with `@Input` for the component, all the heavylifting done internally and doesn't have to bother end users
+- manual change detection (OnPush), manual ChangeDetectorRef calls, getters and setters
+- updates every second via `rxjs` `interval`
+- transforms milliseconds to seconds via `secondsLeft` (pure) pipe
+- implemented `mock-interceptor` to return `mock response` from an HTTP call to server
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+(alternative route could have been with Resource API - which is experimental at the moment, plus signals and effects, though not sure if cutting edge Angular is of much interest to you at the moment, happy to discuss though)

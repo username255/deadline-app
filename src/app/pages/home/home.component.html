@@ -1,0 +1,13 @@
+<app-deadline *ngIf="(secondsUntilDeadline$ | async) as secondsUntilDeadline; else loading" [secondsUntilDeadline]="secondsUntilDeadline"></app-deadline>
+
+<app-deadline *ngIf="(one$ | async) as secondsUntilDeadline; else loading" [secondsUntilDeadline]="secondsUntilDeadline"></app-deadline>
+
+<app-deadline *ngIf="(two$ | async) as secondsUntilDeadline; else loading" [secondsUntilDeadline]="secondsUntilDeadline"></app-deadline>
+
+<app-deadline *ngIf="(three$ | async) as secondsUntilDeadline; else loading" [secondsUntilDeadline]="secondsUntilDeadline"></app-deadline>
+
+<app-deadline *ngIf="(everyThreeSeconds$ | async) as secondsUntilDeadline; else loading" [secondsUntilDeadline]="secondsUntilDeadline"></app-deadline>
+
+<ng-template #loading>
+    <h2>Loading...</h2>
+</ng-template>

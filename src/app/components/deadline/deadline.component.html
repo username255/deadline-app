@@ -1,0 +1,9 @@
+<h2 class="clock-effect" [class.is-deadline]="isDeadlineTime">
+    <ng-container *ngIf="!isDeadlineTime; else deadlineTime">
+        Seconds left to deadline: {{ deadline - now | secondsLeft }}
+    </ng-container>
+</h2>
+
+<ng-template #deadlineTime>
+    Time is up!
+</ng-template>
